@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MA7moud</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+
+<header class="top">
+  <h1>MA7moud</h1>
+</header>
+
+<main>
+  <!-- TO DO LIST - بتتصفر كل يوم -->
+  <section class="card todo-card">
+    <div class="todo-header">TO DO LIST</div>
+    <div class="add-row">
+      <input id="taskInput" type="text" placeholder="write your todo list here...">
+      <button id="addTaskBtn">+ إضافة</button>
+    </div>
+    <ul id="taskList"></ul>
+  </section>
+
+  <aside>
+    <!-- مشاريعي - ثابتة على المدى السنوي -->
+    <section class="card">
+      <h2>💼 مشاريعي</h2>
+      <div id="projectList" class="projects-grid"></div>
+      <div class="add-project-box">
+        <input id="projectNameInput" type="text" placeholder="اسم المشروع...">
+        <input id="projectLinkInput" type="url" placeholder="لينك المشروع... https://">
+        <label class="upload-btn">
+          📷 اختر صورة
+          <input id="projectImageInput" type="file" accept="image/*" hidden>
+        </label>
+        <img id="projectPreview" style="display:none;">
+        <button class="add-small" id="addProjectBtn">+ إضافة مشروع</button>
+      </div>
+    </section>
+
+    <!-- شهاداتي - ثابتة على المدى السنوي -->
+    <section class="card">
+      <h2>🎓 شهاداتي</h2>
+      <div id="certList" class="projects-grid"></div>
+      <div class="add-project-box">
+        <input id="certNameInput" type="text" placeholder="اسم الشهادة...">
+        <label class="upload-btn">
+          📷 اختر صورة الشهادة
+          <input id="certImageInput" type="file" accept="image/*" hidden>
+        </label>
+        <img id="certPreview" style="display:none;">
+        <button class="add-small" id="addCertBtn">+ إضافة شهادة</button>
+      </div>
+    </section>
+
+    <!-- الصلاة - بتتصفر كل يوم -->
+    <section class="card">
+      <h2>🕌 الصلاة</h2>
+      <ul id="prayerList"></ul>
+    </section>
+  </aside>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

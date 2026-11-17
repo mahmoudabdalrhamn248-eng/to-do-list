@@ -1,0 +1,165 @@
+* { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+body { margin: 0; background: #070b1e; color: #fff; min-height: 100vh; }
+.bg {
+  position: fixed; inset: 0; z-index: -1;
+  background: radial-gradient(circle at 20% 20%, #1e3a8a55, transparent 40%),
+              radial-gradient(circle at 80% 80%, #3b82f655, transparent 40%),
+              #070b1e;
+}
+.top {
+  max-width: 1100px; margin: 18px auto 10px; padding: 16px 24px;
+  border: 1px solid #ffffff22; border-radius: 14px;
+  background: rgba(255,255,255,.06); backdrop-filter: blur(10px);
+  text-align: right;
+}
+.top h1 { margin: 0; font-size: 42px; letter-spacing: 1px; }
+
+main {
+  max-width: 1100px; margin: 0 auto; padding: 12px;
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; align-items: start;
+}
+.card {
+  background: rgba(255,255,255,.07); border: 1px solid #ffffff22;
+  border-radius: 16px; padding: 16px; backdrop-filter: blur(12px);
+}
+aside { display: flex; flex-direction: column; gap: 16px; }
+h2 { margin: 0 0 12px; font-size: 24px; }
+
+.todo-header {
+  background: #2f6bff; color: #fff; font-weight: 800; font-size: 28px;
+  padding: 10px 14px; border-radius: 10px; letter-spacing: 1px; margin-bottom: 12px;
+}
+.add-row { display: flex; gap: 10px; }
+.add-row input {
+  flex: 1; padding: 12px; border-radius: 10px; border: 1px solid #ffffff33;
+  background: rgba(255,255,255,.12); color: #fff; font-size: 16px; outline: none;
+}
+.add-row input::placeholder { color: #cbd5e1; }
+.add-row button, .add-small {
+  background: #2f6bff; color: #fff; border: none; border-radius: 10px;
+  padding: 10px 16px; font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.add-small { width: 100%; margin-top: 10px; background: transparent; border: 1px solid #2f6bff; color: #6aa5ff; }
+
+ul { list-style: none; padding: 0; margin: 0; }
+#taskList li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 6px; border-bottom: 1px solid #ffffff1a;
+}
+#taskList li:last-child { border-bottom: none; }
+#taskList li span { flex: 1; font-size: 19px; }
+#taskList li.done span { text-decoration: line-through; opacity: .55; }
+#taskList input[type="checkbox"] { width: 22px; height: 22px; accent-color: #2f6bff; cursor: pointer; }
+.del {
+  background: #ff4757; color: #fff; border: none; border-radius: 20px;
+  padding: 5px 12px; cursor: pointer; font-weight: 700;
+}
+.small-del { background: none; border: none; color: #ff6b81; cursor: pointer; font-size: 18px; }
+
+#prayerList li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 0; font-size: 19px;
+}
+.dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #94a3b8; cursor: pointer; }
+.dot.on { background: #2f6bff; border-color: #2f6bff; box-shadow: 0 0 0 3px #2f6bff33; }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.project-card {
+  background: rgba(255,255,255,.08);
+  border: 1px solid #ffffff22;
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  padding-bottom: 12px;
+}
+.project-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+}
+.project-card .no-img {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background: #1e293b;
+}
+.project-card p {
+  margin: 10px 6px 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+.project-card .small-del {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: #ff4757;
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 16px;
+}
+.project-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  background: #2f6bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.project-link:hover { background: #1d4ed8; }
+.no-link {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+.add-project-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.add-project-box input[type="text"],
+.add-project-box input[type="url"] {
+  padding: 11px;
+  border-radius: 10px;
+  border: 1px solid #ffffff33;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+.add-project-box input::placeholder { color: #cbd5e1; }
+.upload-btn {
+  background: rgba(255,255,255,.12);
+  border: 1px dashed #6aa5ff;
+  border-radius: 10px;
+  padding: 11px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+}
+#projectPreview, #certPreview {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  main { grid-template-columns: 1fr; }
+  .top h1 { font-size: 34px; }
+}
